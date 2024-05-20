@@ -1,11 +1,11 @@
-defmodule Clique5.MixProject do
+defmodule RandomWord.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :clique5,
+      app: :random_word,
       version: "0.1.0",
-      elixir: "~> 1.14",
+      elixir: "~> 1.16.2",
       start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
@@ -22,9 +22,10 @@ defmodule Clique5.MixProject do
   defp deps do
     [
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
-      {:nimble_csv, "~> 1.1"},
-      {:libgraph, "~> 0.16.0"},
-      {:dialyxir, "~> 1.4", only: [:dev, :test], runtime: false}
+      {:dialyxir, "~> 1.4", only: [:dev, :test], runtime: false},
+      {:benchee, "~> 1.0", only: :dev},
+      {:arrays, "~> 2.0"},
+      {:arrays_aja, "~> 0.2.0"}
     ]
   end
 end
